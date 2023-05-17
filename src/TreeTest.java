@@ -4,6 +4,16 @@ class TreeTest {
 
     @org.junit.jupiter.api.Test
     void find() {
+        Tree<Integer, String> arbol = new Tree<>();
+
+        arbol.insert(1,"root",null);
+        arbol.insert(2,"izquierdo",1);
+        arbol.insert(3,"derecho",1);
+
+        assertEquals("root", arbol.find(1));
+        assertEquals("izquierdo", arbol.find(2));
+        assertEquals("derecho", arbol.find(3));
+
 
     }
 
@@ -23,5 +33,14 @@ class TreeTest {
 
     @org.junit.jupiter.api.Test
     void delete() {
+        Tree<Integer, String> arbol = new Tree<>();
+        arbol.insert(1,"root",null);
+        arbol.insert(2,"izquierdo",1);
+        arbol.insert(3,"derecho",1);
+
+        arbol.delete(3);
+
+        assertNull(arbol.find(3));
+
     }
 }
