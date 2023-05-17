@@ -5,4 +5,9 @@ public interface MyTree<K, T> {
     void insert(K key, T data, K parentKey);
 
     void delete(K key);
+    int size();
+
+    int countLeaf();
+
+    int countCompleteElements();
 }

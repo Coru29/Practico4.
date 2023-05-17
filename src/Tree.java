@@ -83,4 +83,44 @@ public class Tree<K, T> implements MyTree<K, T> {
             delete(node.rightChild, key);
         }
     }
+
+    @Override
+    public int size() {
+        return size(root);
+    }
+
+    private int size(Node<K, T> node) {
+        if (node == null) {
+            return 0;
+        }
+        return 1 + size(node.leftChild) + size(node.rightChild);
+    }
+
+    @Override
+    public int countLeaf() {
+        return countLeaf(root);
+    }
+
+    private int countLeaf(Node<K, T> node) {
+        if (node == null) {
+            return 0;
+        }
+        if (node.leftChild == null && node.rightChild == null) {
+            return 1;
+        }
+        return countLeaf(node.leftChild) + countLeaf(node.rightChild);
+    }
+
+    @Override
+    public int countCompleteElements() {
+        return countCompleteElements(root);
+    }
+
+    private int countCompleteElements(Node<K, T> node) {
+        if (node == null) {
+            return 0;
+        }
+        int count = (node.leftChild != null && node.rightChild != null) ? 1 : 0;
+        return count + countCompleteElements(node.leftChild) + countCompleteElements(node.rightChild);
+    }
 }
