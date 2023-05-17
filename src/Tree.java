@@ -13,9 +13,9 @@ public class Tree<K, T> implements MyTree<K, T> {
         if (node.key.equals(key)) {
             return node.data;
         }
-        T leftChild = find(node.leftChild, key);
-        if (leftChild != null) {
-            return leftChild;
+        T left = find(node.leftChild, key);
+        if (left != null) {
+            return left;
         }
         return find(node.rightChild, key);
     }
@@ -42,6 +42,8 @@ public class Tree<K, T> implements MyTree<K, T> {
         }
     }
 
+
+
     private Node<K, T> findNode(Node<K, T> node, K key) {
         if (node == null) {
             return null;
@@ -49,9 +51,9 @@ public class Tree<K, T> implements MyTree<K, T> {
         if (node.key.equals(key)) {
             return node;
         }
-        Node<K, T> leftChild = findNode(node.leftChild, key);
-        if (leftChild != null) {
-            return leftChild;
+        Node<K, T> left = findNode(node.leftChild, key);
+        if (left != null) {
+            return left;
         }
         return findNode(node.rightChild, key);
     }
