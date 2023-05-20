@@ -120,7 +120,12 @@ public class Tree<K, T> implements MyTree<K, T> {
         if (node == null) {
             return 0;
         }
-        int count = (node.leftChild != null && node.rightChild != null) ? 1 : 0;
+        int count;
+        if (node.leftChild != null && node.rightChild != null) {
+            count = 1;
+        } else {
+            count = 0;
+        }
         return count + countCompleteElements(node.leftChild) + countCompleteElements(node.rightChild);
     }
 }

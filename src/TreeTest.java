@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TreeTest {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void find() {
         Tree<Integer, String> arbol = new Tree<>();
 
@@ -19,7 +19,7 @@ class TreeTest {
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void insert() {
         Tree<Integer, String> arbol = new Tree<>();
         arbol.insert(1,"root",null);
@@ -33,7 +33,7 @@ class TreeTest {
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void delete() {
         Tree<Integer, String> arbol = new Tree<>();
         arbol.insert(1,"root",null);
